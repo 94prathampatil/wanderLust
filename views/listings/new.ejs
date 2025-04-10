@@ -1,0 +1,69 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h2>Creating new Listing</h2>
+    <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-lable mb-2">Title</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="listing[title]"
+          placeholder="Villah"
+        />
+        <div class="valid-feedback">Title Looks good!</div>
+      </div>
+      <div class="mb-3">
+        <label for="Description" class="form-lable mb-2">Description</label>
+        <textarea class="form-control" name="listing[description]" required>
+        </textarea>
+      </div>
+      <div class="mb-3">
+        <label for="Image" class="form-lable mb-2">Upload Image</label>
+        <input
+          class="form-control"
+          type="file"
+          name="listing[image]"
+          placeholder="Image URL/Link"
+          required403702
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Price" class="form-lable mb-2">Price</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="listing[price]"
+          placeholder="&#8377;1200"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-8">
+          <label for="Location" class="form-lable mb-2">Location</label>
+          <input
+            required
+            class="form-control"
+            type="text"
+            name="listing[location]"
+            placeholder="135, MG Road, Sector 14, Gurgaon, Haryana - 122001"
+          />
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="Country" class="form-lable mb-2">Country</label>
+          <input
+            required
+            class="form-control"
+            type="text"
+            name="listing[country]"
+            placeholder="India"
+          />
+        </div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+      </div>
+      <button class="btn btn-dark add-btn">Add</button><br /><br />
+    </form>
+  </div>
+</div>

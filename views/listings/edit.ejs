@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Edit Your Listing</h3>
+    <form
+      method="post"
+      action="/listings/<%- listing._id %>?_method=PUT"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-lable mb-2">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          value="<%- listing.title %>"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Description" class="form-lable mb-2">Description</label>
+        <textarea
+          name="listing[description]"
+          rows="5"
+          cols="30"
+          class="form-control"
+        >
+          <%- listing.description %></textarea
+        >
+      </div>
+
+      <div class="mb-3">
+        <p>Original</p>
+        <img src="<%= originalImgUrl %>" width="300px" height="180px" />
+      </div>
+
+      <div class="mb-3">
+        <label for="Image" class="form-lable mb-2">Upload updated Image</label>
+        <input type="file" name="listing[image]" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="Price" class="form-lable mb-2">Price</label>
+        <input
+          type="number"
+          name="listing[price]"
+          value="<%- listing.price %>"
+          class="form-control"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-8">
+          <label for="Location" class="form-lable mb-2">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            value="<%- listing.location %>"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="Country" class="form-lable mb-2">Country</label>
+          <input
+            type="text"
+            name="listing[country]"
+            value="<%- listing.country %>"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <button class="btn btn-dark add-btn">Edit</button>
+    </form>
+  </div>
+</div>
