@@ -65,9 +65,9 @@ const sessionConfig = {
     }
 }
 
-// app.get("/", (req, res) => {
-//     res.render("listing.ejs")
-// })
+app.get("/", (req, res) => {
+    res.render("listing.ejs")
+})
 
 
 app.use(session(sessionConfig));
