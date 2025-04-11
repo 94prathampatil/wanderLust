@@ -65,9 +65,9 @@ const sessionConfig = {
     }
 }
 
-// app.get("/", (req, res) => {
-//     res.send("API is Working...! ")
-// })
+app.get("/", (req, res) => {
+    res.render("listing.ejs")
+})
 
 
 app.use(session(sessionConfig));
@@ -108,9 +108,6 @@ app.use((req, res, next) => {
 // })
 
 
-app.get("/", (req, res) => {
-    res.render("listings.ejs")
-})
 
 // Main Listing Route
 app.use("/listings", listingsRouter)
