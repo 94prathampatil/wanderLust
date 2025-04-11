@@ -108,6 +108,10 @@ app.use((req, res, next) => {
 // })
 
 
+app.get("/", (req, res) => {
+    res.render("listings.ejs")
+})
+
 // Main Listing Route
 app.use("/listings", listingsRouter)
 // Review Route for Each Listing
